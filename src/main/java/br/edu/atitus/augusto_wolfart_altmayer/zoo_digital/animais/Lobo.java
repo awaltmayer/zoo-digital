@@ -4,29 +4,29 @@ import br.edu.atitus.augusto_wolfart_altmayer.zoo_digital.comportamentos.Corredo
 import br.edu.atitus.augusto_wolfart_altmayer.zoo_digital.comportamentos.Predador;
 import br.edu.atitus.augusto_wolfart_altmayer.zoo_digital.especies.Mamifero;
 
-public class Gato extends Mamifero implements Corredor, Predador {
+public class Lobo extends Mamifero implements Corredor, Predador {
 
-    public Gato(String nome, int idade) {
+    public Lobo(String nome, int idade) {
         super(nome, idade);
     }
 
     @Override
     public void emitirSom() {
-        System.out.println(getNome() + " faz: Miau!");
+        System.out.println(getNome() + " uiva para a lua cheia.");
     }
 
     @Override
     public void comer() {
-        System.out.println(getNome() + " está comendo peixinho.");
+        System.out.println(getNome() + " está comendo a presa que caçou.");
     }
 
     @Override
     public void correr() {
-        System.out.println(getNome() + " está correndo pelo corredor em alta velocidade.");
+        System.out.println(getNome() + " está correndo em matilha pela floresta.");
     }
 
     @Override
     public void cacar() {
-        System.out.println(getNome() + " está caçando um rato silenciosamente.");
+        System.out.println(getNome() + " está caçando em grupo, cercando a presa.");
     }
 }

@@ -4,29 +4,29 @@ import br.edu.atitus.augusto_wolfart_altmayer.zoo_digital.comportamentos.Nadador
 import br.edu.atitus.augusto_wolfart_altmayer.zoo_digital.comportamentos.Predador;
 import br.edu.atitus.augusto_wolfart_altmayer.zoo_digital.especies.Peixe;
 
-public class Traira extends Peixe implements Nadador, Predador {
+public class Piranha extends Peixe implements Nadador, Predador {
 
-    public Traira(String nome, int idade) {
+    public Piranha(String nome, int idade) {
         super(nome, idade);
     }
 
     @Override
     public void emitirSom() {
-        System.out.println(getNome() + " produz sons graves com a bexiga natatória.");
+        System.out.println(getNome() + " range os dentes produzindo um som ameaçador.");
     }
 
     @Override
     public void comer() {
-        System.out.println(getNome() + " está comendo outros peixes menores.");
+        System.out.println(getNome() + " está comendo carne com seus dentes afiados.");
     }
 
     @Override
     public void nadar() {
-        System.out.println(getNome() + " está nadando nas margens do rio à espreita.");
+        System.out.println(getNome() + " está nadando em cardume nos rios da Amazônia.");
     }
 
     @Override
     public void cacar() {
-        System.out.println(getNome() + " está emboscando presas com ataque relâmpago.");
+        System.out.println(getNome() + " está atacando em bando com mordidas ferozes.");
     }
 }
