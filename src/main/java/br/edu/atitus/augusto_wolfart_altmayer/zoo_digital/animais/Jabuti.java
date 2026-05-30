@@ -10,7 +10,7 @@ public class Jabuti extends Reptil {
 
     @Override
     public void emitirSom() {
-        System.out.println(getNome() + " emite sons graves durante o período de acasalamento.");
+        System.out.println(getNome() + " Não tem som.");
     }
 
     @Override

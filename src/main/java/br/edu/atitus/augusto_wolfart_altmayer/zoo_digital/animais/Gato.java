@@ -12,21 +12,21 @@ public class Gato extends Mamifero implements Corredor, Predador {
 
     @Override
     public void emitirSom() {
-        System.out.println(getNome() + " faz: Miau!");
+        System.out.println(getNome() + " faz: Mia!");
     }
 
     @Override
     public void comer() {
-        System.out.println(getNome() + " está comendo peixinho.");
+        System.out.println(getNome() + " está comendo peixe.");
     }
 
     @Override
     public void correr() {
-        System.out.println(getNome() + " está correndo pelo corredor em alta velocidade.");
+        System.out.println(getNome() + " está correndo atrás do passarinho. ");
     }
 
     @Override
     public void cacar() {
-        System.out.println(getNome() + " está caçando um rato silenciosamente.");
+        System.out.println(getNome() + " está caçando um rato.");
     }
 }

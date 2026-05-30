@@ -12,12 +12,12 @@ public class Pato extends Ave implements Nadador, Voador {
 
     @Override
     public void emitirSom() {
-        System.out.println(getNome() + " faz: Quack quack!");
+        System.out.println(getNome() + " quack");
     }
 
     @Override
     public void comer() {
-        System.out.println(getNome() + " está comendo grãos e insetos aquáticos.");
+        System.out.println(getNome() + " está comendo grãos.");
     }
 
     @Override

@@ -12,21 +12,21 @@ public class Golfinho extends Mamifero implements Nadador, Predador {
 
     @Override
     public void emitirSom() {
-        System.out.println(getNome() + " faz: Click click squeak!");
+        System.out.println(getNome() + "Nem sei o som");
     }
 
     @Override
     public void comer() {
-        System.out.println(getNome() + " está comendo peixes e lulas.");
+        System.out.println(getNome() + " está comendo peixes.");
     }
 
     @Override
     public void nadar() {
-        System.out.println(getNome() + " está nadando e saltando nas ondas.");
+        System.out.println(getNome() + " está nadando e saltando.");
     }
 
     @Override
     public void cacar() {
-        System.out.println(getNome() + " está caçando peixes em grupo usando ecolocalização.");
+        System.out.println(getNome() + " está caçando peixes em grupo.");
     }
 }

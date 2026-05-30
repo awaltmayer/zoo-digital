@@ -12,12 +12,12 @@ public class Flamingo extends Ave implements Nadador, Voador {
 
     @Override
     public void emitirSom() {
-        System.out.println(getNome() + " emite um som alto e honky.");
+        System.out.println(getNome() + " emite um som alto.");
     }
 
     @Override
     public void comer() {
-        System.out.println(getNome() + " está filtrando algas e crustáceos na água rasa.");
+        System.out.println(getNome() + " está comendo peixe.");
     }
 
     @Override
@@ -27,7 +27,7 @@ public class Flamingo extends Ave implements Nadador, Voador {
 
     @Override
     public void voar() {
-        System.out.println(getNome() + " está voando em bando com as pernas esticadas para trás.");
+        System.out.println(getNome() + " está voando em bando.");
     }
 }
 

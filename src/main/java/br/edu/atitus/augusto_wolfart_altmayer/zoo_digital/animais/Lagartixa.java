@@ -12,7 +12,7 @@ public class Lagartixa extends Reptil implements Corredor, Predador {
 
     @Override
     public void emitirSom() {
-        System.out.println(getNome() + " faz: Tch tch tch! (cliques vocais)");
+        System.out.println(getNome() + " Não tem som");
     }
 
     @Override
@@ -22,11 +22,11 @@ public class Lagartixa extends Reptil implements Corredor, Predador {
 
     @Override
     public void correr() {
-        System.out.println(getNome() + " está correndo pela parede verticalmente.");
+        System.out.println(getNome() + " está correndo pela parede. ");
     }
 
     @Override
     public void cacar() {
-        System.out.println(getNome() + " está caçando insetos com sua língua veloz.");
+        System.out.println(getNome() + " está caçando insetos.");
     }
 }

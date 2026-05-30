@@ -12,7 +12,7 @@ public class Piranha extends Peixe implements Nadador, Predador {
 
     @Override
     public void emitirSom() {
-        System.out.println(getNome() + " range os dentes produzindo um som ameaçador.");
+        System.out.println(getNome() + " range os dentes ?.");
     }
 
     @Override
@@ -22,11 +22,11 @@ public class Piranha extends Peixe implements Nadador, Predador {
 
     @Override
     public void nadar() {
-        System.out.println(getNome() + " está nadando em cardume nos rios da Amazônia.");
+        System.out.println(getNome() + " está nadando em cardume nos rios.");
     }
 
     @Override
     public void cacar() {
-        System.out.println(getNome() + " está atacando em bando com mordidas ferozes.");
+        System.out.println(getNome() + " está atacando em bando.");
     }
 }

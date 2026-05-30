@@ -11,16 +11,16 @@ public class Baleia extends Mamifero implements Nadador {
 
     @Override
     public void emitirSom() {
-        System.out.println(getNome() + " emite um canto profundo e melodioso.");
+        System.out.println(getNome() + " emite um som?.");
     }
 
     @Override
     public void comer() {
-        System.out.println(getNome() + " está filtrando krill pela barbatana.");
+        System.out.println(getNome() + " está filtrando.");
     }
 
     @Override
     public void nadar() {
-        System.out.println(getNome() + " está nadando lentamente nos oceanos profundos.");
+        System.out.println(getNome() + " está nadando no oceano.");
     }
 }

@@ -21,7 +21,7 @@ public class TubaraoBalleia extends Peixe implements Nadador {
 
     @Override
     public void nadar() {
-        System.out.println(getNome() + " está nadando lentamente, sendo o maior peixe do oceano.");
+        System.out.println(getNome() + " está nadando lentamente.");
     }
 }
 

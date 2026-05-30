@@ -12,7 +12,7 @@ public class Pinguim extends Ave implements Nadador, Predador {
 
     @Override
     public void emitirSom() {
-        System.out.println(getNome() + " faz: Squawk squawk!");
+        System.out.println(getNome() + "quack");
     }
 
     @Override

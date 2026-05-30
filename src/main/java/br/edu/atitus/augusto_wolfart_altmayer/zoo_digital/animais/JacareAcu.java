@@ -12,17 +12,17 @@ public class JacareAcu extends Reptil implements Nadador, Predador {
 
     @Override
     public void emitirSom() {
-        System.out.println(getNome() + " emite rugidos graves e assustadores.");
+        System.out.println(getNome() + " emite rugidos.");
     }
 
     @Override
     public void comer() {
-        System.out.println(getNome() + " está devorando sua presa com a mandíbula poderosa.");
+        System.out.println(getNome() + " está devorando sua presa.");
     }
 
     @Override
     public void nadar() {
-        System.out.println(getNome() + " está nadando silenciosamente com apenas os olhos visíveis.");
+        System.out.println(getNome() + " está nadando silenciosamente.");
     }
 
     @Override

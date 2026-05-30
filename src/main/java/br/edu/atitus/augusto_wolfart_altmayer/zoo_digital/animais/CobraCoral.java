@@ -11,16 +11,16 @@ public class CobraCoral extends Reptil implements Predador {
 
     @Override
     public void emitirSom() {
-        System.out.println(getNome() + " não emite som, mas sibila ameaçadoramente.");
+        System.out.println(getNome() + " ela nem tem som?.");
     }
 
     @Override
     public void comer() {
-        System.out.println(getNome() + " está engolindo a presa inteira lentamente.");
+        System.out.println(getNome() + " está digerindo a presa.");
     }
 
     @Override
     public void cacar() {
-        System.out.println(getNome() + " está injetando veneno neurotóxico em sua presa.");
+        System.out.println(getNome() + " está injetando veneno em sua presa.");
     }
 }

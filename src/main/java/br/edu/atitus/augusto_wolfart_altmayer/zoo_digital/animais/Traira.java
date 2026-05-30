@@ -12,7 +12,7 @@ public class Traira extends Peixe implements Nadador, Predador {
 
     @Override
     public void emitirSom() {
-        System.out.println(getNome() + " produz sons graves com a bexiga natatória.");
+        System.out.println(getNome() + " produz sons graves.");
     }
 
     @Override
@@ -27,6 +27,6 @@ public class Traira extends Peixe implements Nadador, Predador {
 
     @Override
     public void cacar() {
-        System.out.println(getNome() + " está emboscando presas com ataque relâmpago.");
+        System.out.println(getNome() + " está emboscando presas com ataque bote.");
     }
 }

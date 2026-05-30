@@ -17,16 +17,16 @@ public class Aguia extends Ave implements Voador, Predador {
 
     @Override
     public void comer() {
-        System.out.println(getNome() + " está comendo a presa com seu bico curvo.");
+        System.out.println(getNome() + " está comendo a presa.");
     }
 
     @Override
     public void voar() {
-        System.out.println(getNome() + " está planando nas correntes de ar com asas abertas.");
+        System.out.println(getNome() + " está planando.");
     }
 
     @Override
     public void cacar() {
-        System.out.println(getNome() + " está mergulhando em alta velocidade para capturar a presa.");
+        System.out.println(getNome() + " mergulha a 200km/h para pegar a presa.");
     }
 }

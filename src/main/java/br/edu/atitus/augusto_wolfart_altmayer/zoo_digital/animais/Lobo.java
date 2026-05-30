@@ -12,7 +12,7 @@ public class Lobo extends Mamifero implements Corredor, Predador {
 
     @Override
     public void emitirSom() {
-        System.out.println(getNome() + " uiva para a lua cheia.");
+        System.out.println(getNome() + " Uinvando.");
     }
 
     @Override
