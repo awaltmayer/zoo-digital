@@ -29,4 +29,8 @@ public class JacareAcu extends Reptil implements Nadador, Predador {
     public void cacar() {
         System.out.println(getNome() + " está esperando pacientemente na beira do rio para atacar.");
     }
+    @Override
+    public String getTipo() {
+        return "Jacaré Açu";
+    }
 }

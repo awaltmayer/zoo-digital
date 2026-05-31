@@ -12,7 +12,7 @@ public class Cachorro extends Mamifero implements Corredor, Predador {
 
     @Override
     public void emitirSom() {
-        System.out.println(getNome() + " late!");
+        System.out.println(getNome() + " faz: Au au!");
     }
 
     @Override
@@ -22,11 +22,16 @@ public class Cachorro extends Mamifero implements Corredor, Predador {
 
     @Override
     public void correr() {
-        System.out.println(getNome() + " está correndo atrás da bola.");
+        System.out.println(getNome() + " está correndo atrás do carteiro.");
     }
 
     @Override
     public void cacar() {
-        System.out.println(getNome() + " está caçando um coelho.");
+        System.out.println(getNome() + " está caçando a meia que roubou.");
+    }
+
+    @Override
+    public String getTipo() {
+        return "Cachorro";
     }
 }

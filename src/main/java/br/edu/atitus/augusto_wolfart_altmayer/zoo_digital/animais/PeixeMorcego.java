@@ -23,4 +23,8 @@ public class PeixeMorcego extends Peixe implements Nadador {
     public void nadar() {
         System.out.println(getNome() + " está 'caminhando' no fundo do mar com suas nadadeiras.");
     }
+    @Override
+    public String getTipo() {
+        return "Peixe morcego";
+    }
 }

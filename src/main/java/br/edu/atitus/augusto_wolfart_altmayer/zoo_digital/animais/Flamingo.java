@@ -29,5 +29,10 @@ public class Flamingo extends Ave implements Nadador, Voador {
     public void voar() {
         System.out.println(getNome() + " está voando em bando.");
     }
+    @Override
+    public String getTipo() {
+        return "Flamingo";
+    }
 }
+
 

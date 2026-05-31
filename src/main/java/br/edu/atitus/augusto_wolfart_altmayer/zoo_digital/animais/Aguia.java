@@ -29,4 +29,8 @@ public class Aguia extends Ave implements Voador, Predador {
     public void cacar() {
         System.out.println(getNome() + " mergulha a 200km/h para pegar a presa.");
     }
+    @Override
+    public String getTipo() {
+        return "Águia";
+    }
 }

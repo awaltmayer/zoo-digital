@@ -18,7 +18,6 @@ public class ZooDigitalApp {
     private static AnimalDAO dao;
 
     public static void main(String[] args) {
-        // Inicializar banco e carregar animais salvos
         try {
             dao = new AnimalDAO(ConexaoBanco.getConexao());
             List<Animal> salvos = dao.carregarTodos();
@@ -31,6 +30,7 @@ public class ZooDigitalApp {
             System.err.println("[Banco] O sistema funcionara sem persistencia.");
         }
 
+        limparTela();
         System.out.println("============================================");
         System.out.println("       Bem-vindo ao Zoo Digital!            ");
         System.out.println("============================================");
@@ -39,7 +39,7 @@ public class ZooDigitalApp {
         do {
             exibirMenu();
             opcao = lerInteiro("Escolha uma opcao: ");
-            System.out.println();
+            limparTela();
 
             switch (opcao) {
                 case 1 -> cadastrarAnimal();
@@ -53,20 +53,36 @@ public class ZooDigitalApp {
                 case 0 -> System.out.println("Encerrando o Zoo Digital. Ate logo!");
                 default -> System.out.println("Opcao invalida. Tente novamente.");
             }
-            System.out.println();
+
+            if (opcao != 0) {
+                System.out.println("\nPressione ENTER para voltar ao menu...");
+                scanner.nextLine();
+                limparTela();
+            }
+
         } while (opcao != 0);
 
         ConexaoBanco.fechar();
         scanner.close();
     }
 
-    // ---------------------------------------------------------------
-    // MENU
-    // ---------------------------------------------------------------
+    private static void limparTela() {
+        try {
+            if (System.getProperty("os.name").toLowerCase().contains("win")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+            }
+        } catch (Exception e) {
+            for (int i = 0; i < 50; i++) System.out.println();
+        }
+    }
+
     private static void exibirMenu() {
-        System.out.println("--------------------------------------------");
-        System.out.println("                   MENU                     ");
-        System.out.println("--------------------------------------------");
+        System.out.println("============================================");
+        System.out.println("           Zoo Digital                      ");
+        System.out.println("============================================");
         System.out.println("  1 - Cadastrar Animal");
         System.out.println("  2 - Listar Todos os Animais");
         System.out.println("  3 - Listar Animais Corredores");
@@ -76,18 +92,15 @@ public class ZooDigitalApp {
         System.out.println("  7 - Exibir Total de Animais Cadastrados");
         System.out.println("  8 - Remover Animal");
         System.out.println("  0 - Sair");
-        System.out.println("--------------------------------------------");
+        System.out.println("============================================");
     }
 
-    // ---------------------------------------------------------------
-    // OPÇÃO 1 – CADASTRAR
-    // ---------------------------------------------------------------
     private static void cadastrarAnimal() {
         System.out.println("=== Cadastrar Animal ===");
         System.out.println("Tipos disponiveis:");
         System.out.println("  Mamiferos : 1-Cachorro  2-Gato  3-Golfinho  4-Baleia  5-Lobo");
         System.out.println("  Aves      : 6-Pato  7-Pinguim  8-Aguia  9-Flamingo");
-        System.out.println("  Peixes    : 10-PeixeMorcego  11-Traira  12-Piranha  13-TubaraoBalleia");
+        System.out.println("  Peixes    : 10-PeixeMorcego  11-Traira  12-Piranha  13-TubaraoBaleia");
         System.out.println("  Repteis   : 14-CobraCoral  15-Jabuti  16-JacareAcu  17-Lagartixa");
 
         int tipo = lerInteiro("Tipo: ");
@@ -122,7 +135,7 @@ public class ZooDigitalApp {
             case 10 -> new PeixeMorcego(nome, idade);
             case 11 -> new Traira(nome, idade);
             case 12 -> new Piranha(nome, idade);
-            case 13 -> new TubaraoBalleia(nome, idade);
+            case 13 -> new TubaraoBaleia(nome, idade);
             case 14 -> new CobraCoral(nome, idade);
             case 15 -> new Jabuti(nome, idade);
             case 16 -> new JacareAcu(nome, idade);
@@ -130,24 +143,19 @@ public class ZooDigitalApp {
             default -> throw new IllegalArgumentException("Tipo invalido");
         };
 
-        // Upcasting: adiciona à lista em memória
         animais.add(animal);
 
-        // Persiste no banco
         try {
             if (dao != null) dao.salvar(animal);
         } catch (SQLException e) {
             System.err.println("[Banco] Erro ao salvar: " + e.getMessage());
         }
 
-        System.out.println(nome + " cadastrado(a) com sucesso!");
+        System.out.println("\n" + nome + " cadastrado(a) com sucesso!");
     }
 
-    // ---------------------------------------------------------------
-    // OPÇÃO 2 – LISTAR TODOS
-    // ---------------------------------------------------------------
     private static void listarTodos() {
-        System.out.println("=== Todos os Animais ===");
+        System.out.println("=== Todos os Animais ===\n");
         if (animais.isEmpty()) {
             System.out.println("Nenhum animal cadastrado.");
             return;
@@ -160,11 +168,8 @@ public class ZooDigitalApp {
         }
     }
 
-    // ---------------------------------------------------------------
-    // OPÇÃO 3 – CORREDORES
-    // ---------------------------------------------------------------
     private static void listarCorredores() {
-        System.out.println("=== Animais Corredores ===");
+        System.out.println("=== Animais Corredores ===\n");
         boolean encontrou = false;
         for (Animal a : animais) {
             if (a instanceof Corredor corredor) {
@@ -177,11 +182,8 @@ public class ZooDigitalApp {
         if (!encontrou) System.out.println("Nenhum animal corredor cadastrado.");
     }
 
-    // ---------------------------------------------------------------
-    // OPÇÃO 4 – NADADORES
-    // ---------------------------------------------------------------
     private static void listarNadadores() {
-        System.out.println("=== Animais Nadadores ===");
+        System.out.println("=== Animais Nadadores ===\n");
         boolean encontrou = false;
         for (Animal a : animais) {
             if (a instanceof Nadador nadador) {
@@ -194,11 +196,8 @@ public class ZooDigitalApp {
         if (!encontrou) System.out.println("Nenhum animal nadador cadastrado.");
     }
 
-    // ---------------------------------------------------------------
-    // OPÇÃO 5 – VOADORES
-    // ---------------------------------------------------------------
     private static void listarVoadores() {
-        System.out.println("=== Animais Voadores ===");
+        System.out.println("=== Animais Voadores ===\n");
         boolean encontrou = false;
         for (Animal a : animais) {
             if (a instanceof Voador voador) {
@@ -211,11 +210,8 @@ public class ZooDigitalApp {
         if (!encontrou) System.out.println("Nenhum animal voador cadastrado.");
     }
 
-    // ---------------------------------------------------------------
-    // OPÇÃO 6 – PREDADORES
-    // ---------------------------------------------------------------
     private static void listarPredadores() {
-        System.out.println("=== Animais Predadores ===");
+        System.out.println("=== Animais Predadores ===\n");
         boolean encontrou = false;
         for (Animal a : animais) {
             if (a instanceof Predador predador) {
@@ -228,19 +224,13 @@ public class ZooDigitalApp {
         if (!encontrou) System.out.println("Nenhum animal predador cadastrado.");
     }
 
-    // ---------------------------------------------------------------
-    // OPÇÃO 7 – TOTAL (static)
-    // ---------------------------------------------------------------
     private static void exibirTotal() {
-        System.out.println("=== Total de Animais ===");
+        System.out.println("=== Total de Animais ===\n");
         System.out.println("Total de animais cadastrados: " + Animal.getContador());
     }
 
-    // ---------------------------------------------------------------
-    // OPÇÃO 8 – REMOVER
-    // ---------------------------------------------------------------
     private static void removerAnimal() {
-        System.out.println("=== Remover Animal ===");
+        System.out.println("=== Remover Animal ===\n");
         if (animais.isEmpty()) {
             System.out.println("Nenhum animal cadastrado.");
             return;
@@ -248,9 +238,9 @@ public class ZooDigitalApp {
         System.out.print("Nome do animal a remover: ");
         String nome = scanner.nextLine().trim();
 
-        boolean removidoMemoria = animais.removeIf(a -> a.getNome().equalsIgnoreCase(nome));
+        boolean removido = animais.removeIf(a -> a.getNome().equalsIgnoreCase(nome));
 
-        if (removidoMemoria) {
+        if (removido) {
             try {
                 if (dao != null) dao.remover(nome);
             } catch (SQLException e) {
@@ -262,9 +252,6 @@ public class ZooDigitalApp {
         }
     }
 
-    // ---------------------------------------------------------------
-    // UTILITÁRIO
-    // ---------------------------------------------------------------
     private static int lerInteiro(String prompt) {
         while (true) {
             System.out.print(prompt);

@@ -29,4 +29,8 @@ public class Lagartixa extends Reptil implements Corredor, Predador {
     public void cacar() {
         System.out.println(getNome() + " está caçando insetos.");
     }
+    @Override
+    public String getTipo() {
+        return "Lagartixa";
+    }
 }

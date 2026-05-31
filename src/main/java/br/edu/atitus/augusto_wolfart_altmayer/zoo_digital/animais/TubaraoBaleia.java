@@ -3,9 +3,9 @@ package br.edu.atitus.augusto_wolfart_altmayer.zoo_digital.animais;
 import br.edu.atitus.augusto_wolfart_altmayer.zoo_digital.comportamentos.Nadador;
 import br.edu.atitus.augusto_wolfart_altmayer.zoo_digital.especies.Peixe;
 
-public class TubaraoBalleia extends Peixe implements Nadador {
+public class TubaraoBaleia extends Peixe implements Nadador {
 
-    public TubaraoBalleia(String nome, int idade) {
+    public TubaraoBaleia(String nome, int idade) {
         super(nome, idade);
     }
 
@@ -23,6 +23,9 @@ public class TubaraoBalleia extends Peixe implements Nadador {
     public void nadar() {
         System.out.println(getNome() + " está nadando lentamente.");
     }
-}
 
-//coloquei o tubarão Baleia com dois "ll" para facilitar posteriormente o sistema de pesquisas.
+    @Override
+    public String getTipo() {
+        return "Tubarão-Baleia";
+    }
+}

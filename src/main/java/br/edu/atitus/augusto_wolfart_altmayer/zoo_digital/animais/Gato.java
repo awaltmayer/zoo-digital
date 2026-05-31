@@ -29,4 +29,8 @@ public class Gato extends Mamifero implements Corredor, Predador {
     public void cacar() {
         System.out.println(getNome() + " está caçando um rato.");
     }
+    @Override
+    public String getTipo() {
+        return "Gato";
+    }
 }

@@ -29,4 +29,8 @@ public class Pinguim extends Ave implements Nadador, Predador {
     public void cacar() {
         System.out.println(getNome() + " está caçando krill no gelo.");
     }
+    @Override
+    public String getTipo() {
+        return "Pinguim";
+    }
 }

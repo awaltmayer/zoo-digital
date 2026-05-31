@@ -68,7 +68,7 @@ public class AnimalDAO {
             case "PeixeMorcego"   -> new PeixeMorcego(nome, idade);
             case "Traira"         -> new Traira(nome, idade);
             case "Piranha"        -> new Piranha(nome, idade);
-            case "TubaraoBalleia" -> new TubaraoBalleia(nome, idade);
+            case "TubaraoBaleia" -> new TubaraoBaleia(nome, idade);
             case "CobraCoral"     -> new CobraCoral(nome, idade);
             case "Jabuti"         -> new Jabuti(nome, idade);
             case "JacareAcu"      -> new JacareAcu(nome, idade);

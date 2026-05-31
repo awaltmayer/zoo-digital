@@ -29,4 +29,8 @@ public class Traira extends Peixe implements Nadador, Predador {
     public void cacar() {
         System.out.println(getNome() + " está emboscando presas com ataque bote.");
     }
+    @Override
+    public String getTipo() {
+        return "Traíra";
+    }
 }

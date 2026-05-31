@@ -29,4 +29,8 @@ public class Piranha extends Peixe implements Nadador, Predador {
     public void cacar() {
         System.out.println(getNome() + " está atacando em bando.");
     }
+    @Override
+    public String getTipo() {
+        return "Piranha";
+    }
 }

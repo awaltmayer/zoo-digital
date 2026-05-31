@@ -29,4 +29,9 @@ public class Pato extends Ave implements Nadador, Voador {
     public void voar() {
         System.out.println(getNome() + " está voando em formação migratória.");
     }
+
+    @Override
+    public String getTipo() {
+        return "Pato";
+    }
 }

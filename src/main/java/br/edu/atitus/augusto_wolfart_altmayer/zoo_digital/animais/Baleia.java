@@ -23,4 +23,8 @@ public class Baleia extends Mamifero implements Nadador {
     public void nadar() {
         System.out.println(getNome() + " está nadando no oceano.");
     }
+    @Override
+    public String getTipo() {
+        return "Baleia";
+    }
 }

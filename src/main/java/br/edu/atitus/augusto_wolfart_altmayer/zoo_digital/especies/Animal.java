@@ -33,10 +33,17 @@ public abstract class Animal {
         System.out.println(nome + " está comendo " + alimento + ".");
     }
 
+    // Grupo do animal: Mamífero, Ave, Peixe, Réptil
     public abstract String getEspecie();
+
+    // Espécie específica do animal: Pato, Cachorro, Piranha, etc.
+    public abstract String getTipo();
 
     @Override
     public String toString() {
-        return String.format("Nome: %-15s | Idade: %2d ano(s) | Espécie: %s", nome, idade, getEspecie());
+        return String.format(
+                "Nome: %-15s | Idade: %2d ano(s) | Grupo: %-10s | Animal: %s",
+                nome, idade, getEspecie(), getTipo()
+        );
     }
 }

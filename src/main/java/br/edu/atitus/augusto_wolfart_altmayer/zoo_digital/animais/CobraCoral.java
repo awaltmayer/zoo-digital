@@ -23,4 +23,8 @@ public class CobraCoral extends Reptil implements Predador {
     public void cacar() {
         System.out.println(getNome() + " está injetando veneno em sua presa.");
     }
+    @Override
+    public String getTipo() {
+        return "Cobra coral";
+    }
 }
